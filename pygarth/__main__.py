@@ -1,3 +1,3 @@
-from PyGARTH import cli
+from pygarth import cli
 
 cli.cli()

@@ -1,5 +1,5 @@
 from argparse import ArgumentParser
-from PyGARTH import __version__
+from pygarth import __version__
 
 def cli(args=None):
     p = ArgumentParser(

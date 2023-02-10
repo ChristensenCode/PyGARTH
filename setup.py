@@ -1,30 +1,26 @@
 from setuptools import setup
-import versioneer
+from pygarth.__version__ import __version__
+
 
 requirements = [
     # package requirements go here
 ]
 
 setup(
-    name='PyGARTH',
-    version=versioneer.get_version(),
-    cmdclass=versioneer.get_cmdclass(),
+    name="PyGARTH",
+    version=__version__,
     description="Automatic regression testing harness in Python.",
     license="MIT",
     author="Ryan Christensen",
-    author_email='ryan.john.christensen12@gmail.com',
-    url='https://github.com/ChristensenCode/PyGARTH',
-    packages=['PyGARTH'],
-    entry_points={
-        'console_scripts': [
-            'PyGARTH=PyGARTH.cli:cli'
-        ]
-    },
+    author_email="ryan.john.christensen12@gmail.com",
+    url="https://github.com/ChristensenCode/PyGARTH ",
+    packages=["pygarth"],
+    entry_points={"console_scripts": ["pygarth=pygarth.cli:cli"]},
     install_requires=requirements,
-    keywords='PyGARTH',
+    keywords="pygarth",
     classifiers=[
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
-    ]
+        "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+    ],
 )

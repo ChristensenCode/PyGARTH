@@ -30,7 +30,13 @@ requirements:
     - python
     - pip
   run:
-    - python
+    - python<3.10
+    - numpy
+    - pandas
+    - h5py
+    - pytables
+    - tqdm
+    - pyfiglet
     # dependencies are defined in setup.py
     {% for dep in data['install_requires'] %}
     - {{ dep.lower() }}

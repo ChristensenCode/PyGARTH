@@ -1,0 +1,7 @@
+[report]
+omit =
+    setup.py
+    PyGARTH/__main__.py
+    PyGARTH/_version.py
+    versioneer.py
+    tests/*

@@ -37,7 +37,9 @@ requirements:
     - pytables
     - tqdm
     - pyfiglet
-    # dependencies are defined in setup.py
+    - jsonschema
+    - click
+    - tabulate
     {% for dep in data['install_requires'] %}
     - {{ dep.lower() }}
     {% endfor %}

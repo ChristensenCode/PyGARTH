@@ -1,0 +1,22 @@
+name: pygarth
+
+channels:
+  - conda-forge
+  - anaconda
+  - defaults
+
+dependencies:
+  - python<3.10
+  - numpy
+  - pandas
+  - h5py
+  - pytables
+  - tqdm
+  - pyfiglet
+  - jsonschema
+  - click
+  - tabulate
+  - black
+  - pytest
+  - pytest-cov
+  - hypothesis

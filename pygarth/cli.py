@@ -5,9 +5,12 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+
 def unknown_command_message(unknown_messages: list[str]) -> None:
-    logger.info(f"The following arguments were ignored: {', '.join(unknown_messages)!r}")
-    
+    logger.info(
+        f"The following arguments were ignored: {', '.join(unknown_messages)!r}"
+    )
+
 
 def cli(args=None):
     p = ArgumentParser(
@@ -21,19 +24,24 @@ def cli(args=None):
         help="Show the version of the program.",
         version=f"PyGARTH {__version__.__version__}",
     )
-    
+
     p.add_argument(
-        "-is",
-        "--instruction_set",
-        help="Path to instruction set of PyGarth",
+        "-c",
+        "--compare_only",
+        help="Only compares the output without executing the tests. The provided option needs to be a directory.",
+    )
+
+    p.add_argument(
+        "-f",
+        "--fast",
+        help="Performs minimal file comparison and limited results report.",
     )
 
     args, unknown = p.parse_known_args(args)
     if unknown:
         unknown_command_message(unknown)
-    
-    return args
 
+    return args
 
 
 if __name__ == "__main__":

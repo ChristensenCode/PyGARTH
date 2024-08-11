@@ -1,0 +1,33 @@
+# Files to use for comparison.
+# Using the Path.rglob() command.
+filename_patterns:
+  - "*.out"
+  - "*.sample"
+
+# Some filenames change from run to run and this
+# provides an option to generalize the output names.
+filename_substitutions:
+  - original_filename: "[0-9]{4}"
+    replacement_filename: "0000" 
+
+# Provides a list of regular expression replacements
+# during the file comparison. Useful for things that
+# might change from one test execution to another like...
+# - time
+# - user name
+# - execution paths
+# - version numbers
+text_substitutions:
+  - original_text: ""
+    replacement_text: ""
+
+# Folder containing the expected outputs
+expected_folder: ""
+
+# Location and pattern for the instruction set of the code.
+# The input files are then used in the 'execution_command' to 
+# replace the "$INPUT" argument.
+instruction_set_folder: ""
+
+# Command used to run the program under test.
+execution_command: "/path/to/code -i $INPUT"

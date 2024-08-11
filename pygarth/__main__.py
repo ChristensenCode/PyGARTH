@@ -1,7 +1,12 @@
-from pygarth import cli
+from pygarth.cli import cli
+from pygarth.config_logger import logging_config
+import logging
+
+logger = logging.getLogger(__name__)
 
 def main():
-    cli.cli()
+    logging_config()
+    cli_arguments = cli()
 
 if __name__ == "__main__":
     main()    

@@ -1,28 +1,40 @@
 from argparse import ArgumentParser
 from pygarth import __version__
+import sys
+import logging
+
+logger = logging.getLogger(__name__)
+
+def unknown_command_message(unknown_messages: list[str]) -> None:
+    logger.info(f"The following arguments were ignored: {', '.join(unknown_messages)!r}")
+    
 
 def cli(args=None):
     p = ArgumentParser(
         description="Automatic regression testing harness in Python.",
-        conflict_handler='resolve'
+        conflict_handler="resolve",
     )
     p.add_argument(
-        '-V', '--version',
-        action='version',
-        help='Show the conda-prefix-replacement version number and exit.',
-        version="PyGARTH %s" % __version__,
+        "-v",
+        "--version",
+        action="version",
+        help="Show the version of the program.",
+        version=f"PyGARTH {__version__.__version__}",
+    )
+    
+    p.add_argument(
+        "-is",
+        "--instruction_set",
+        help="Path to instruction set of PyGarth",
     )
 
     args, unknown = p.parse_known_args(args)
-
-    # do something with the args
-    print("CLI template - fix me up!")
-
-    # No return value means no error.
-    # Return a value of 1 or higher to signify an error.
-    # See https://docs.python.org/3/library/sys.html#sys.exit
+    if unknown:
+        unknown_command_message(unknown)
+    
+    return args
 
 
-if __name__ == '__main__':
-    import sys
+
+if __name__ == "__main__":
     cli(sys.argv[1:])

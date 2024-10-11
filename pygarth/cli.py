@@ -1,5 +1,15 @@
 from argparse import ArgumentParser
 from pygarth import __version__
+import sys
+import logging
+
+logger = logging.getLogger(__name__)
+
+
+def unknown_command_message(unknown_messages: list[str]) -> None:
+    logger.info(
+        f"The following arguments were ignored: {', '.join(unknown_messages)!r}"
+    )
 
 
 def cli(args=None):

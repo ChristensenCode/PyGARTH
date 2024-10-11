@@ -1,4 +1,8 @@
-from pygarth import cli
+from pygarth.cli import cli
+from pygarth.config_logger import logging_config
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 def main():

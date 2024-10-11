@@ -1,8 +1,5 @@
 #!/usr/bin/bash
-cd conda.recipe
-conda build .
-cd ..
-if [ !-d "build" ] then
-    mkdir build
-fi
-conda create -p ./0.0.3 -c ~/anaconda3/conda-bld/noarch pygarth
+pip uninstall pygarth -y
+python -m build
+pip install dist/pygarth-0.0.1-py3-none-any.whl
+pygarth -h

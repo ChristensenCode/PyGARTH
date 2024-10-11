@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "PyGarth"
+name = "PyGARTH"
 version = "0.0.1"
 description = "A generic automated testing tool written in python."
 readme = "README.md"

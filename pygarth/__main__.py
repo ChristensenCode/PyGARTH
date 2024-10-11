@@ -7,7 +7,7 @@ logger = logging.getLogger(__name__)
 
 def main():
     print("Hello PyGARTH! ")
-    input_args = cli.cli()
+    input_args = cli()
     x = 1
 
 

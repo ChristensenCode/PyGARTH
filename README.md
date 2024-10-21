@@ -7,10 +7,15 @@ Automatic regression testing harness in Python.
 Local Building
 ---
 
-here
+.. code-block::
+    python3 -m build
+
+or
+
+.. code-block::
+    ./build.sh
 
 Development
 ---
 
-.. code-block::
-    python3 -m build
+

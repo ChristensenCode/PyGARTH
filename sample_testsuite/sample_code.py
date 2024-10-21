@@ -1,4 +1,4 @@
-#!python3
+#!/usr/bin/python3
 from pathlib import Path
 import sys
 
@@ -17,9 +17,11 @@ class DataGatherer:
         with open(self.filepath, "rb") as file_data:
             return file_data.read()
 
-    def count_unique_words(self): ...
+    def count_unique_words(self):
+        return 2
 
-    def count_number_of_lines(self): ...
+    def count_number_of_lines(self):
+        return 4
 
 
 def main():
